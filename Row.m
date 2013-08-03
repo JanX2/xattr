@@ -27,7 +27,7 @@
 }
 
 - (NSString*)value {
-	return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+	return [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
 }
 
 - (void)setName:(NSString*)aName {
@@ -80,7 +80,7 @@
 		NSString * path = [ws fullPathForApplication:app];
 		if(path) icon = [ws iconForFile:path];	
 	}
-	if(!icon) icon = [[NSImage alloc] init];
+	if(!icon) icon = [[[NSImage alloc] init] autorelease];
 	return icon;
 }
 
