@@ -10,11 +10,11 @@
 #import "Row.h"
 
 @interface App : NSObject {
-    NSMutableArray *array;
-    NSString *path;
+	NSMutableArray *array;
+	NSString *path;
     
-    NSTableView *table;
-    NSArrayController *ctrl;
+	NSTableView *table;
+	NSArrayController *ctrl;
 }
 
 - (NSString *)path;

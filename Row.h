@@ -10,9 +10,9 @@
 
 
 @interface Row : NSObject {
-    NSString *name;
-    NSData *data;
-    id delegate;
+	NSString *name;
+	NSData *data;
+	id delegate;
 }
 
 // Weak linking of delegate
