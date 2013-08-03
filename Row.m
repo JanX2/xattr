@@ -31,9 +31,82 @@
 	return data;
 }
 
+static NSString * convertPlistDataToXMLString(NSData *inData) {
+    NSError *error;
+	NSPropertyListFormat format;
+    id plist =
+	[NSPropertyListSerialization propertyListWithData:inData
+											  options:0
+											   format:&format
+												error:&error];
+    if (plist == nil) {
+        NSLog (@"Error parsing plist: %@", error);
+        return nil;
+    }
+
+	return convertPlistRootToXML(plist);
+}
+
+// Adapted from http://blog.bignerdranch.com/603-property-list-seralization/
+static NSString * convertPlistRootToXML(id plist) {
+    if (![NSPropertyListSerialization propertyList:plist
+								  isValidForFormat:kCFPropertyListXMLFormat_v1_0]) {
+        NSLog(@"Can't convert plist to XML");
+        return nil;
+    }
+	
+    NSError *error;
+    NSData *data =
+	[NSPropertyListSerialization dataWithPropertyList:plist
+											   format:kCFPropertyListXMLFormat_v1_0
+											  options:0
+												error:&error];
+    if (data == nil) {
+        NSLog (@"Error serializing plist to xml: %@", error);
+        return nil;
+    }
+	
+	NSString *xmlString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+    if (xmlString == nil) {
+        NSLog (@"Error converting data to string: %@", error);
+        return nil;
+    }
+	
+	return xmlString;
+}
+
+// Adapted from http://stackoverflow.com/a/4771038
+static BOOL startsWith(const char *pre, const char *str)
+{
+    size_t lenpre = strlen(pre),
+	lenstr = strlen(str);
+    return (lenstr < lenpre) ? false : (strncmp(pre, str, lenpre) == 0);
+}
+
 - (NSString *)value
 {
-	return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+	NSString *value = nil;
+	
+	const char *dataBytes = (const char *)[data bytes];
+	
+	if (startsWith("bplist", dataBytes)) {
+		id unarchivedRoot = [NSUnarchiver unarchiveObjectWithData:data];
+		if (unarchivedRoot != nil) {
+			value = [unarchivedRoot description];
+		}
+		else {
+			value = convertPlistDataToXMLString(data);
+		}
+	} else {
+		value = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+	}
+	
+	if (value == nil) {
+		// Fallback
+		value = [[[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding] autorelease];
+	}
+	
+	return value;
 }
 
 - (void)setName:(NSString *)aName
