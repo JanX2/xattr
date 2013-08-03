@@ -75,25 +75,16 @@
  * Model/View stuff for the GUI
  */
  
-- (void)openPanelDidEnd:(NSOpenPanel *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo {
-	if(returnCode == NSOKButton) {
-		[self setPath:[[sheet filenames] objectAtIndex: 0]];
-		[self storeLoad];
-	}
-	[sheet release];
-}
-
 - (IBAction)open:(id)sender {
-	NSOpenPanel * sheet = [[NSOpenPanel openPanel] retain];
+	NSOpenPanel * sheet = [NSOpenPanel openPanel];
 	[sheet setCanChooseDirectories:YES];
-	[sheet 
-		beginSheetForDirectory:nil 
-		file:nil
-		types:nil
-		modalForWindow:nil
-		modalDelegate:self
-		didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
-		contextInfo:nil];
+	[sheet beginSheetModalForWindow:nil
+				  completionHandler:^(NSInteger returnCode) {
+					  if(returnCode == NSOKButton) {
+						  [self setPath:[(NSURL *)[[sheet URLs] objectAtIndex: 0] path]];
+						  [self storeLoad];
+					  }
+				  }];
 }
 
 - (IBAction)add:(id)sender {
