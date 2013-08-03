@@ -48,7 +48,7 @@
 - (void)storeSet:(Row *)row
 {
 	NSLog(@"set %@=%@", [row name], [row value]);
-	XAttr *x = [[XAttr alloc] initWithFilePath:path];
+	XAttr *x = [[XAttr alloc] initWithFile:path];
 	[x setData:[row data] forKey:[row name]];
 	[x release];
 }
@@ -56,7 +56,7 @@
 - (void)storeClear:(NSString *)name
 {
 	NSLog(@"delete %@", name);
-	XAttr *x = [[XAttr alloc] initWithFilePath:path];
+	XAttr *x = [[XAttr alloc] initWithFile:path];
 	[x removeDataForKey:name];
 	[x release];
 }
@@ -65,7 +65,7 @@
 {
 	NSLog(@"load");
 	NSMutableArray *info = [[NSMutableArray alloc] init];
-	XAttr *x = [[XAttr alloc] initWithFilePath:path];
+	XAttr *x = [[XAttr alloc] initWithFile:path];
 	NSArray *keys = [x keys];
 	NSEnumerator *kenum = [keys objectEnumerator];
 	NSString *key;
@@ -149,7 +149,7 @@
 	[self setArray:[[NSMutableArray alloc] init]];
     
 	/*
-	 XAttr * x = [[XAttr alloc] initWithFilePath:@"/Users/rpointon/Demox.html"];
+	 XAttr * x = [[XAttr alloc] initWithFile:@"/Users/rpointon/Demox.html"];
 	 NSArray * keys = [x keys];
 	 NSLog(@"all keys = %@", keys);
      
