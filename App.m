@@ -30,7 +30,7 @@
 	[self didChangeValueForKey:@"path"];
 }
 
-- (void)setArray:(NSArray*)aArray {
+- (void)setArray:(NSMutableArray*)aArray {
 	[array release];
 	[self willChangeValueForKey:@"array"];
 	array = [aArray retain];
