@@ -138,7 +138,7 @@
 	NSEnumerator *	kenum = [keys objectEnumerator];
 	NSString * name;
 	while((name = [kenum nextObject])) {
-		NSString * value = [[NSString alloc] initWithData:[x dataForKey:name] encoding:NSASCIIStringEncoding];
+		NSString * value = [[NSString alloc] initWithData:[x dataForKey:name] encoding:NSUTF8StringEncoding];
 		NSLog(@"%@ = %@", name, value);
 	}
 	[x release];

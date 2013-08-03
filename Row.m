@@ -27,7 +27,7 @@
 }
 
 - (NSString*)value {
-	return [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
+	return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (void)setName:(NSString*)aName {
@@ -39,7 +39,7 @@
 
 - (void)setValue:(NSString*)aValue {
 	[data release];
-	data = [[aValue dataUsingEncoding:NSASCIIStringEncoding] retain];
+	data = [[aValue dataUsingEncoding:NSUTF8StringEncoding] retain];
 	[delegate valueEdit:self];
 }
 
