@@ -10,15 +10,15 @@
 #import "Row.h"
 
 @interface App : NSObject {
-	NSMutableArray * array;
-	NSString * path;
-	
-	NSTableView * table;	
-	NSArrayController * ctrl;	
+    NSMutableArray *array;
+    NSString *path;
+    
+    NSTableView *table;
+    NSArrayController *ctrl;
 }
 
-- (NSString*)path;
-- (NSArray*)array;
+- (NSString *)path;
+- (NSArray *)array;
 
 - (IBAction)open:(id)sender;
 - (IBAction)add:(id)sender;

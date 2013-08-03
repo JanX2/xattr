@@ -10,32 +10,31 @@
 
 
 @interface Row : NSObject {
-	NSString * name;
-	NSData * data;
-	id delegate;
+    NSString *name;
+    NSData *data;
+    id delegate;
 }
 
 // Weak linking of delegate
-- (id)initWithDelegate:(id)aDelegate name:(NSString*)aName value:(NSData*)aValue;
+- (id)initWithDelegate:(id)aDelegate name:(NSString *)aName value:(NSData *)aValue;
 
-- (NSString*)name;
-- (NSData*)data;
+- (NSString *)name;
+- (NSData *)data;
 
 // some extras to make things look nice
-- (NSString*)displayName;
-- (NSImage*)icon;
+- (NSString *)displayName;
+- (NSImage *)icon;
 - (NSUInteger)valueSize;
 
-- (NSString*)value; //string from data
+- (NSString *)value; //string from data
 
-- (void)setName:(NSString*)aName;
-- (void)setValue:(NSString*)aValue;
+- (void)setName:(NSString *)aName;
+- (void)setValue:(NSString *)aValue;
 
 
 @end
 
-@interface NSObject(RowDelegate)
-- (void)nameEdit:(Row*)row previousName:(NSString*)previous;
-- (void)valueEdit:(Row*)row;
+@interface NSObject (RowDelegate)
+- (void)nameEdit:(Row *)row previousName:(NSString *)previous;
+- (void)valueEdit:(Row *)row;
 @end
-
