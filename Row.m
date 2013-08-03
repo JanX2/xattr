@@ -33,38 +33,59 @@
 
 static NSString * convertPlistDataToXMLString(NSData *inData) {
     NSError *error;
+    id plist = convertPlistDataToPlistRoot(inData, &error);
+
+	return convertPlistRootToXMLString(plist);
+}
+
+static NSData * convertXMLStringToPlistData(NSString *xmlString) {
+    NSError *error;
+    id plist = convertPlistDataToPlistRoot([xmlString dataUsingEncoding:NSUTF8StringEncoding], &error);
+	
+	return convertPlistRootToDataWithFormat(plist, kCFPropertyListBinaryFormat_v1_0, &error);
+}
+
+static id convertPlistDataToPlistRoot(NSData *inData, NSError **error) {
 	NSPropertyListFormat format;
     id plist =
 	[NSPropertyListSerialization propertyListWithData:inData
 											  options:0
 											   format:&format
-												error:&error];
+												error:error];
     if (plist == nil) {
-        NSLog (@"Error parsing plist: %@", error);
+        NSLog (@"Error parsing plist: %@", *error);
         return nil;
     }
-
-	return convertPlistRootToXML(plist);
+	else {
+		return plist;
+	}
 }
 
 // Adapted from http://blog.bignerdranch.com/603-property-list-seralization/
-static NSString * convertPlistRootToXML(id plist) {
+static NSData * convertPlistRootToDataWithFormat(id plist, NSPropertyListFormat outFormat, NSError **error) {
     if (![NSPropertyListSerialization propertyList:plist
-								  isValidForFormat:kCFPropertyListXMLFormat_v1_0]) {
+								  isValidForFormat:outFormat]) {
         NSLog(@"Can't convert plist to XML");
         return nil;
     }
 	
-    NSError *error;
     NSData *data =
 	[NSPropertyListSerialization dataWithPropertyList:plist
-											   format:kCFPropertyListXMLFormat_v1_0
+											   format:outFormat
 											  options:0
-												error:&error];
+												error:error];
     if (data == nil) {
-        NSLog (@"Error serializing plist to xml: %@", error);
+        NSLog (@"Error serializing plist to format: %@", *error);
         return nil;
     }
+	else {
+		return data;
+	}
+}
+
+static NSString * convertPlistRootToXMLString(id plist) {
+    NSError *error;
+    NSData *data = convertPlistRootToDataWithFormat(plist, kCFPropertyListXMLFormat_v1_0, &error);
 	
 	NSString *xmlString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
     if (xmlString == nil) {
@@ -120,7 +141,13 @@ static BOOL startsWith(const char *pre, const char *str)
 - (void)setValue:(NSString *)aValue
 {
 	[data release];
-	data = [[aValue dataUsingEncoding:NSUTF8StringEncoding] retain];
+	if ([aValue hasPrefix:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+		 "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\\\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">"]) {
+		data = convertXMLStringToPlistData(aValue);
+	}
+	else {
+		data = [[aValue dataUsingEncoding:NSUTF8StringEncoding] retain];
+	}
 	[delegate valueEdit:self];
 }
 
