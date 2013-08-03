@@ -43,7 +43,7 @@
 	[delegate valueEdit:self];
 }
 
-- (int)valueSize { 
+- (NSUInteger)valueSize { 
 	return [data length]; 
 }
 

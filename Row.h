@@ -24,7 +24,7 @@
 // some extras to make things look nice
 - (NSString*)displayName;
 - (NSImage*)icon;
-- (int)valueSize;
+- (NSUInteger)valueSize;
 
 - (NSString*)value; //string from data
 
