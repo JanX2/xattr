@@ -100,8 +100,8 @@ static NSString * convertPlistRootToXMLString(id plist) {
 static BOOL startsWith(const char *pre, const char *str)
 {
     if (str == NULL)  return NO;
-	size_t lenpre = strlen(pre),
-	lenstr = strlen(str);
+	size_t lenpre = strlen(pre);
+	size_t lenstr = strlen(str);
     return (lenstr < lenpre) ? false : (strncmp(pre, str, lenpre) == 0);
 }
 
