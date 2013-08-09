@@ -13,7 +13,7 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		D19D1E72085FC04F00423A56 /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = D19D1E71085FC04F00423A56 /* Row.m */; };
 		D1DC9BC7086046E6007998A1 /* resedit.gif in Resources */ = {isa = PBXBuildFile; fileRef = D1DC9BC6086046E6007998A1 /* resedit.gif */; };
-		D1DE10EB085F78F900D039B9 /* XAttr.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DE10EA085F78F900D039B9 /* XAttr.m */; };
+		D1DE10EB085F78F900D039B9 /* JXExtendedFileAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DE10EA085F78F900D039B9 /* JXExtendedFileAttributes.m */; };
 		D1DE113B085F869900D039B9 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DE113A085F869900D039B9 /* App.m */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +31,8 @@
 		D19D1E70085FC04F00423A56 /* Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row.h; sourceTree = "<group>"; usesTabs = 1; };
 		D19D1E71085FC04F00423A56 /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; usesTabs = 1; };
 		D1DC9BC6086046E6007998A1 /* resedit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = resedit.gif; sourceTree = "<group>"; };
-		D1DE10E9085F78F900D039B9 /* XAttr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAttr.h; sourceTree = "<group>"; usesTabs = 1; };
-		D1DE10EA085F78F900D039B9 /* XAttr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAttr.m; sourceTree = "<group>"; usesTabs = 1; };
+		D1DE10E9085F78F900D039B9 /* JXExtendedFileAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXExtendedFileAttributes.h; sourceTree = "<group>"; usesTabs = 1; };
+		D1DE10EA085F78F900D039B9 /* JXExtendedFileAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXExtendedFileAttributes.m; sourceTree = "<group>"; usesTabs = 1; };
 		D1DE1139085F869900D039B9 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; usesTabs = 1; };
 		D1DE113A085F869900D039B9 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
@@ -52,8 +52,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D1DE10E9085F78F900D039B9 /* XAttr.h */,
-				D1DE10EA085F78F900D039B9 /* XAttr.m */,
+				D1DE10E9085F78F900D039B9 /* JXExtendedFileAttributes.h */,
+				D1DE10EA085F78F900D039B9 /* JXExtendedFileAttributes.m */,
 				D1DE1139085F869900D039B9 /* App.h */,
 				D1DE113A085F869900D039B9 /* App.m */,
 				D19D1E70085FC04F00423A56 /* Row.h */,
@@ -193,7 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				D1DE10EB085F78F900D039B9 /* XAttr.m in Sources */,
+				D1DE10EB085F78F900D039B9 /* JXExtendedFileAttributes.m in Sources */,
 				D1DE113B085F869900D039B9 /* App.m in Sources */,
 				D19D1E72085FC04F00423A56 /* Row.m in Sources */,
 			);

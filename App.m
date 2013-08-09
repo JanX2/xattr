@@ -7,7 +7,7 @@
 //
 
 #import "App.h"
-#import "XAttr.h"
+#import "JXExtendedFileAttributes.h"
 
 @implementation App
 
@@ -48,7 +48,7 @@
 - (void)storeSet:(Row *)row
 {
 	NSLog(@"set %@=%@", [row name], [row value]);
-	XAttr *x = [[XAttr alloc] initWithFile:path];
+	JXExtendedFileAttributes *x = [[JXExtendedFileAttributes alloc] initWithFile:path];
 	[x setData:[row data] forKey:[row name]];
 	[x release];
 }
@@ -56,7 +56,7 @@
 - (void)storeClear:(NSString *)name
 {
 	NSLog(@"delete %@", name);
-	XAttr *x = [[XAttr alloc] initWithFile:path];
+	JXExtendedFileAttributes *x = [[JXExtendedFileAttributes alloc] initWithFile:path];
 	[x removeDataForKey:name];
 	[x release];
 }
@@ -65,7 +65,7 @@
 {
 	NSLog(@"load");
 	NSMutableArray *info = [[NSMutableArray alloc] init];
-	XAttr *x = [[XAttr alloc] initWithFile:path];
+	JXExtendedFileAttributes *x = [[JXExtendedFileAttributes alloc] initWithFile:path];
 	NSArray *keys = [x keys];
 	NSEnumerator *kenum = [keys objectEnumerator];
 	NSString *key;
