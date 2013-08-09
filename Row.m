@@ -186,13 +186,13 @@ static BOOL startsWith(const char *pre, const char *str)
 	NSString *app = nil;
 	NSImage *icon = nil;
 	if ([name isEqual:XAttrFinderInfo]) {
-		app = @"Finder.App";
+		app = @"Finder.app";
 	}
 	if ([name isEqual:XAttrResourceFork]) {
 		icon = [NSImage imageNamed:@"resedit.gif"];
 	}
 	if ([name isEqual:XAttrDiskCheckSum]) {
-		app = @"Disk Utility.App";
+		app = @"Disk Utility.app";
 	}
 	
 	if (app && !icon) {
