@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DA5A89A17B52C1B00A943F4 /* JXExtendedFileAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5A89817B52C1B00A943F4 /* JXExtendedFileAttributes.m */; };
+		3DA5A89B17B52C1B00A943F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5A89917B52C1B00A943F4 /* README.md */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		D19D1E72085FC04F00423A56 /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = D19D1E71085FC04F00423A56 /* Row.m */; };
 		D1DC9BC7086046E6007998A1 /* resedit.gif in Resources */ = {isa = PBXBuildFile; fileRef = D1DC9BC6086046E6007998A1 /* resedit.gif */; };
-		D1DE10EB085F78F900D039B9 /* JXExtendedFileAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DE10EA085F78F900D039B9 /* JXExtendedFileAttributes.m */; };
 		D1DE113B085F869900D039B9 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DE113A085F869900D039B9 /* App.m */; };
 /* End PBXBuildFile section */
 
@@ -26,13 +27,14 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* xattr_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xattr_Prefix.pch; sourceTree = "<group>"; usesTabs = 1; };
+		3DA5A89717B52C1B00A943F4 /* JXExtendedFileAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXExtendedFileAttributes.h; sourceTree = "<group>"; };
+		3DA5A89817B52C1B00A943F4 /* JXExtendedFileAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXExtendedFileAttributes.m; sourceTree = "<group>"; };
+		3DA5A89917B52C1B00A943F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* xattr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xattr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19D1E70085FC04F00423A56 /* Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row.h; sourceTree = "<group>"; usesTabs = 1; };
 		D19D1E71085FC04F00423A56 /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; usesTabs = 1; };
 		D1DC9BC6086046E6007998A1 /* resedit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = resedit.gif; sourceTree = "<group>"; };
-		D1DE10E9085F78F900D039B9 /* JXExtendedFileAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXExtendedFileAttributes.h; sourceTree = "<group>"; usesTabs = 1; };
-		D1DE10EA085F78F900D039B9 /* JXExtendedFileAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXExtendedFileAttributes.m; sourceTree = "<group>"; usesTabs = 1; };
 		D1DE1139085F869900D039B9 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; usesTabs = 1; };
 		D1DE113A085F869900D039B9 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
@@ -52,8 +54,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D1DE10E9085F78F900D039B9 /* JXExtendedFileAttributes.h */,
-				D1DE10EA085F78F900D039B9 /* JXExtendedFileAttributes.m */,
 				D1DE1139085F869900D039B9 /* App.h */,
 				D1DE113A085F869900D039B9 /* App.m */,
 				D19D1E70085FC04F00423A56 /* Row.h */,
@@ -92,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
+				3DA5A89617B52C1B00A943F4 /* JXExtendedFileAttributes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -127,6 +128,17 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DA5A89617B52C1B00A943F4 /* JXExtendedFileAttributes */ = {
+			isa = PBXGroup;
+			children = (
+				3DA5A89717B52C1B00A943F4 /* JXExtendedFileAttributes.h */,
+				3DA5A89817B52C1B00A943F4 /* JXExtendedFileAttributes.m */,
+				3DA5A89917B52C1B00A943F4 /* README.md */,
+			);
+			name = JXExtendedFileAttributes;
+			path = External/JXExtendedFileAttributes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +194,7 @@
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				D1DC9BC7086046E6007998A1 /* resedit.gif in Resources */,
+				3DA5A89B17B52C1B00A943F4 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,9 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				D1DE10EB085F78F900D039B9 /* JXExtendedFileAttributes.m in Sources */,
 				D1DE113B085F869900D039B9 /* App.m in Sources */,
 				D19D1E72085FC04F00423A56 /* Row.m in Sources */,
+				3DA5A89A17B52C1B00A943F4 /* JXExtendedFileAttributes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
